@@ -1,8 +1,7 @@
 class Sighting < ApplicationRecord
-  def index
-    sightings = Sighting.all
-    render json: SightingSerializer.new(sightings)
-  end
+  belongs_to :bird
+  belongs_to :location
+end
 
 class SightingsController < ApplicationController
   def show
